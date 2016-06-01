@@ -1,0 +1,19 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-xs-12 col-lg-3">
+                <strong>Title: </strong>{{track.title}}
+            </div>
+            <div class="col-xs-12 col-lg-6">
+                <strong>Genres: </strong><span ng-repeat="genre in track.genres">{{genre.name}}{{$last ? '' : '  |  '}}</span>
+            </div>
+            <div class="col-xs-12 col-lg-2">
+                <uib-rating ng-model="rating" max="max" ng-change="updateRating()" aria-labelledby="default-rating"></uib-rating>
+            </div>
+            <div class="col-xs-12 col-lg-1" style="margin-top:-5px">
+                <a ui-sref="track.edit({id:track.id})"><i style="font-size:20px;line-height: inherit;float:right" class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+            </div>
+        </div>
+
+    </div>
+</div>

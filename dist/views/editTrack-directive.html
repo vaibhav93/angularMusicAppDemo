@@ -1,0 +1,51 @@
+<div class="row">
+    <div class="col-xs-12 col-lg-6 col-lg-offset-3">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="title" class="col-sm-3 control-label">Title</label>
+                <div class="col-sm-9">
+                    <input type="text" ng-model="track.title" class="form-control" id="title">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="rating" class="col-sm-3 control-label">Rating</label>
+                <div class="col-sm-9">
+                    <uib-rating ng-model="rating" max="max"></uib-rating>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="genres" class="col-sm-3 control-label">Genres</label>
+                <div class="col-sm-9">                    
+                    <span ng-repeat="genre in track.genres" class="label label-success">{{genre.name}}</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="addGenre" class="col-sm-3 control-label">Add Genre</label>
+                <div class="col-sm-9">
+                    <input type="text" ng-model="genreName" class="form-control" id="addGenre">
+                    <button type="button" class="btn btn-default" ng-click="searchGenre()">Search</button>
+                    <button type="button" class="btn btn-default" ng-click="clearSearch()">Clear</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-9">
+                    <div ng-repeat="genre in filteredList">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <strong>{{genre.name}}</strong>
+                            </div>
+                            <div class="col-xs-6">
+                                 <button type="button" ng-click="addGenre(genre)" class="btn btn-default">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-9">
+                    <button type="submit" ng-click="saveTrack()" class="btn btn-default">Save Track</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
