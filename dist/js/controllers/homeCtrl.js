@@ -7,7 +7,7 @@ musicApp.controller('homeCtrl', ["$scope", "$stateParams", "Tracks", "Pagination
             if ($scope.searchParam && $scope.searchParam.length > 0) {
                 if (tempArray.length == 0)
                     tempArray = $scope.tracks.slice();
-                var searchParam = $scope.searchParam.replace(' ', '+');
+                var searchParam = $scope.searchParam;
                 console.log(searchParam);
                 Tracks.query({
                     title: searchParam
